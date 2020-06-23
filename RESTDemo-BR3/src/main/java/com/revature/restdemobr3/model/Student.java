@@ -2,13 +2,17 @@ package com.revature.restdemobr3.model;
 
 public class Student {
 	private String name;
-	private String id;
+	private int id;
 	private String batchID;
 	private Lesson favoriteLesson;
 	
+<<<<<<< HEAD
 	public Student();
 	
 	public Student(String name, String id, String batchID, Lesson favoriteLesson) {
+=======
+	public Student(String name, int id, String batchID, Lesson favoriteLesson) {
+>>>>>>> c9e6c9e851fc74860fdbb6a986c0385e37b28a29
 		super();
 		this.name = name;
 		this.id = id;
@@ -16,18 +20,16 @@ public class Student {
 		this.favoriteLesson = favoriteLesson;
 	}
 	
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((batchID == null) ? 0 : batchID.hashCode());
 		result = prime * result + ((favoriteLesson == null) ? 0 : favoriteLesson.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -48,10 +50,7 @@ public class Student {
 				return false;
 		} else if (!favoriteLesson.equals(other.favoriteLesson))
 			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
+		if (id != other.id)
 			return false;
 		if (name == null) {
 			if (other.name != null)
@@ -62,6 +61,7 @@ public class Student {
 	}
 
 
+
 	public String getName() {
 		return name;
 	}
@@ -70,11 +70,11 @@ public class Student {
 		this.name = name;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
