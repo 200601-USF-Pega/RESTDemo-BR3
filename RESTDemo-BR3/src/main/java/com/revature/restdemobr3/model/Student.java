@@ -6,13 +6,13 @@ public class Student {
 	private String batchID;
 	private Lesson favoriteLesson;
 	
-<<<<<<< HEAD
+
 	public Student();
 	
 	public Student(String name, String id, String batchID, Lesson favoriteLesson) {
-=======
+
 	public Student(String name, int id, String batchID, Lesson favoriteLesson) {
->>>>>>> c9e6c9e851fc74860fdbb6a986c0385e37b28a29
+
 		super();
 		this.name = name;
 		this.id = id;
