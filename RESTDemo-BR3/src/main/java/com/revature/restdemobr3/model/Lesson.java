@@ -5,6 +5,7 @@ public class Lesson {
 	private String topic;
 	private Trainer trainer;
 	
+	public Lesson() {}
 	public Lesson(int id, String topic, Trainer trainer) {
 		super();
 		this.id = id;
@@ -65,6 +66,9 @@ public class Lesson {
 	}
 	public void setTrainer(Trainer trainer) {
 		this.trainer = trainer;
+	}
+	public void setTrainer(int trainerId) {
+		this.trainer.setId(trainerId);
 	}
 	
 	
