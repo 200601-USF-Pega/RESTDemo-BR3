@@ -68,6 +68,9 @@ public class Lesson {
 		this.trainer = trainer;
 	}
 	public void setTrainer(int trainerId) {
+		if (this.trainer == null) {
+			this.trainer = new Trainer();
+		}
 		this.trainer.setId(trainerId);
 	}
 	
