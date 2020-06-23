@@ -13,12 +13,13 @@ import javax.ws.rs.core.Response;
 import com.revature.restdemobr3.model.Lesson;
 import com.revature.restdemobr3.model.Student;
 import com.revature.restdemobr3.model.Trainer;
+import com.revature.restdemobr3.dao.LessonsRepoDB;
 
 @Path("/service")
 public class TrainingService {
 
 	ITrainerRepo trainerRepo = new TrainerRepoDB();
-	ILessonRepo lessonRepo = new LessonRepoDB();
+	LessonsRepoDB lessonRepo = new LessonsRepoDB();
 	IStudentRepo studentRepo = new StudentRepoDB();
 	
 	@POST

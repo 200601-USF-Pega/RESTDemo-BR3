@@ -67,6 +67,9 @@ public class Lesson {
 	public void setTrainer(Trainer trainer) {
 		this.trainer = trainer;
 	}
+	public void setTrainer(int trainerId) {
+		this.trainer.setId(trainerId);
+	}
 	
 	
 }
