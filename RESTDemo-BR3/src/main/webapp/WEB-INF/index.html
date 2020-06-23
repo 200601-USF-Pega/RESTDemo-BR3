@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="rest_activity.css">
+        <title>REST Activity - BR3</title>
+	</head>
+	<body>
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <form action="/service/gettrainers" method="get">
+                            <button>Get Trainers</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/service/getlessons" method="get">
+                            <button>Get Lessons</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/service/getstudents" method="get">
+                            <button>Get Students</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/service/getlessonranks" method="get">
+                            <button>Get Most Popular Lessons</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+	</body>
+</html>
