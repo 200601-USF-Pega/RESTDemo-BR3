@@ -6,6 +6,7 @@ public class Trainer {
 	private Student favoriteStudent;
 	private String currentBatchID;
 	
+	public Trainer() {}
 	public Trainer(String name, int id, Student favoriteStudent, String currentBatchID) {
 		super();
 		this.name = name;

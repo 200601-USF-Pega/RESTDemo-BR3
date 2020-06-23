@@ -5,6 +5,7 @@ public class Lesson {
 	private String topic;
 	private Trainer trainer;
 	
+	public Lesson() {}
 	public Lesson(int id, String topic, Trainer trainer) {
 		super();
 		this.id = id;
