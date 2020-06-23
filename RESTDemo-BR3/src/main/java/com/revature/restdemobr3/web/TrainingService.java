@@ -26,7 +26,7 @@ public class TrainingService {
 //	@POST
 //	@Consumes(MediaType.APPLICATION_JSON)
 //	public Response addLesson(Lesson lesson) {
-//		lessonRepo.addLessons(lesson);
+//		lessonRepo.addLessons();
 //		return Response.ok().build();
 //	}
 	
