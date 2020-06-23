@@ -4,9 +4,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.revature.restdemobr3.model.Student;
+import com.revature.restdemobr3.web.ConnectionService;
 
 public class StudentsRepoDB {
 	
@@ -16,7 +18,7 @@ public class StudentsRepoDB {
 		this.connectionService = connectionService;
 	}
 	
-	@Override
+	
 	public List<Student> getAllStudents() {
 		
 		List<Student> result = new ArrayList<Student>();
@@ -31,10 +33,10 @@ public class StudentsRepoDB {
 				
 				// Fix correct column names
 				Student se = new Student();
-				se.setId(rs.getString("id"));
+				se.setId(rs.getInt("studentid"));
 				se.setName(rs.getString("name"));
-				se.setBatchID(rs.getString("batchid"));
-				se.setFavoriteLesson(rs.getString("favlesson"));
+				se.setBatchID(rs.getString("currentbatchid"));
+				se.setFavoriteLesson(rs.getString("favoritelesson"));
 				if (!result.contains(se)) result.add(se);
 			}
 			
@@ -48,16 +50,16 @@ public class StudentsRepoDB {
 		}
 	}
 	
-	@Override
+	
 	public void addNewStudent(Student student) {
 		
 		try {
 			
 			PreparedStatement newStudent = connectionService.getConnection()
-					.preparedStatement("INSERT INTO students VALUES (?,?,?,?)");
+					.prepareStatement("INSERT INTO student VALUES (?,?,?,?)");
 			
 			newStudent.setString(1,  student.getName());
-			newStudent.setString(2,  student.getId());
+			newStudent.setInt(2,  student.getId());
 			newStudent.setString(3,  student.getBatchID());
 			newStudent.setString(4,  student.getFavoriteLesson());
 			
