@@ -6,6 +6,8 @@ public class Student {
 	private String batchID;
 	private Lesson favoriteLesson;
 	
+	public Student();
+	
 	public Student(String name, String id, String batchID, Lesson favoriteLesson) {
 		super();
 		this.name = name;
