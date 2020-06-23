@@ -1,11 +1,11 @@
 package com.revature.restdemobr3.model;
 
 public class Lesson {
-	private String id;
+	private int id;
 	private String topic;
 	private Trainer trainer;
 	
-	public Lesson(String id, String topic, Trainer trainer) {
+	public Lesson(int id, String topic, Trainer trainer) {
 		super();
 		this.id = id;
 		this.topic = topic;
@@ -16,11 +16,12 @@ public class Lesson {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + id;
 		result = prime * result + ((topic == null) ? 0 : topic.hashCode());
 		result = prime * result + ((trainer == null) ? 0 : trainer.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -30,10 +31,7 @@ public class Lesson {
 		if (getClass() != obj.getClass())
 			return false;
 		Lesson other = (Lesson) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
+		if (id != other.id)
 			return false;
 		if (topic == null) {
 			if (other.topic != null)
@@ -47,10 +45,13 @@ public class Lesson {
 			return false;
 		return true;
 	}
-	public String getId() {
+
+
+
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getTopic() {
