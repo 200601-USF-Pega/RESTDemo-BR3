@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.revature.restdemobr3.model.Lesson;
 import com.revature.restdemobr3.model.Student;
 import com.revature.restdemobr3.web.ConnectionService;
 
@@ -26,7 +27,7 @@ public class StudentsRepoDB {
 		try {
 			
 			Statement s = connectionService.getConnection().createStatement();
-			s.executeQuery("SELECT * FROM students;");
+			s.executeQuery("SELECT * FROM student;");
 			
 			ResultSet rs = s.getResultSet();
 			while (rs.next()) {
@@ -36,7 +37,8 @@ public class StudentsRepoDB {
 				se.setId(rs.getInt("studentid"));
 				se.setName(rs.getString("name"));
 				se.setBatchID(rs.getString("currentbatchid"));
-				se.setFavoriteLesson(rs.getString("favoritelesson"));
+//				se.setFavoriteLesson(new Lesson(rs.getString("favoritelesson")));
+				se.setFavoriteLesson(null);
 				if (!result.contains(se)) result.add(se);
 			}
 			
@@ -61,7 +63,7 @@ public class StudentsRepoDB {
 			newStudent.setString(1,  student.getName());
 			newStudent.setInt(2,  student.getId());
 			newStudent.setString(3,  student.getBatchID());
-			newStudent.setString(4,  student.getFavoriteLesson());
+			newStudent.setString(4,  student.getFavoriteLesson().getTopic());
 			
 		} catch (SQLException e) {
 			

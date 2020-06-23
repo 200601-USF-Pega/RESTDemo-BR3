@@ -7,9 +7,9 @@ public class Student {
 	private Lesson favoriteLesson;
 	
 
-	public Student();
-	
-	public Student(String name, String id, String batchID, Lesson favoriteLesson) {
+	public Student() {
+		super();
+	}
 
 	public Student(String name, int id, String batchID, Lesson favoriteLesson) {
 
