@@ -3,43 +3,27 @@ package com.revature.restdemobr3.model;
 public class Student {
 	private String name;
 	private int id;
-<<<<<<< HEAD
-	private String batchID;
 	private int favoriteLesson;
-=======
-	private int batchID;
-	private Lesson favoriteLesson;
->>>>>>> 552da78943a7d596995cb63b52b40499ed003290
-	
+	private int batchID;	
 
 	public Student() {
 		super();
 	}
 
-<<<<<<< HEAD
-	public Student(String name, int id, String batchID, int favoriteLesson) {
-=======
-	public Student(String name, int id, int batchID, Lesson favoriteLesson) {
->>>>>>> 552da78943a7d596995cb63b52b40499ed003290
-
+	public Student(String name, int id, int batchID, int favoriteLesson) {
 		super();
 		this.name = name;
 		this.id = id;
 		this.batchID = batchID;
 		this.favoriteLesson = favoriteLesson;
 	}
-
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-<<<<<<< HEAD
-		result = prime * result + ((batchID == null) ? 0 : batchID.hashCode());
-		result = prime * result + favoriteLesson;
-=======
 		result = prime * result + batchID;
-		result = prime * result + ((favoriteLesson == null) ? 0 : favoriteLesson.hashCode());
->>>>>>> 552da78943a7d596995cb63b52b40499ed003290
+		result = prime * result + favoriteLesson;
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;

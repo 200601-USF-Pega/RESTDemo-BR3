@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
+Built-By: jorla
+=======
 Built-By: Drew Diaz
+>>>>>>> fa48216337142811924377a34185366e9ee91db4
 Build-Jdk: 1.8.0_251
 Created-By: Maven Integration for Eclipse
 
