@@ -43,7 +43,14 @@ public class LessonsRepoDB {
 		return null;
 	}
 
-	public void addLessons() {
-
+	public void addLessons(Lesson lesson) {
+		try {
+			PreparedStatement s = ConnectionService.getConnection().prepareStatement("INSERT INTO public.lessons (topic, trainer) VALUES (?, ?);");
+			s.setString(1, lesson.getTopic());
+			s.setInt(2, lesson.getTrainer().getId()); 
+			s.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Exception: " + e.getMessage());
+		}
 	}
 }
