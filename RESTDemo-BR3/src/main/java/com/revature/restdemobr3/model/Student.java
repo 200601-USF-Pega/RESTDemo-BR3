@@ -3,15 +3,24 @@ package com.revature.restdemobr3.model;
 public class Student {
 	private String name;
 	private int id;
+<<<<<<< HEAD
+	private String batchID;
+	private int favoriteLesson;
+=======
 	private int batchID;
 	private Lesson favoriteLesson;
+>>>>>>> 552da78943a7d596995cb63b52b40499ed003290
 	
 
 	public Student() {
 		super();
 	}
 
+<<<<<<< HEAD
+	public Student(String name, int id, String batchID, int favoriteLesson) {
+=======
 	public Student(String name, int id, int batchID, Lesson favoriteLesson) {
+>>>>>>> 552da78943a7d596995cb63b52b40499ed003290
 
 		super();
 		this.name = name;
@@ -24,8 +33,13 @@ public class Student {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+<<<<<<< HEAD
+		result = prime * result + ((batchID == null) ? 0 : batchID.hashCode());
+		result = prime * result + favoriteLesson;
+=======
 		result = prime * result + batchID;
 		result = prime * result + ((favoriteLesson == null) ? 0 : favoriteLesson.hashCode());
+>>>>>>> 552da78943a7d596995cb63b52b40499ed003290
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
@@ -42,10 +56,7 @@ public class Student {
 		Student other = (Student) obj;
 		if (batchID != other.batchID)
 			return false;
-		if (favoriteLesson == null) {
-			if (other.favoriteLesson != null)
-				return false;
-		} else if (!favoriteLesson.equals(other.favoriteLesson))
+		if (favoriteLesson != other.favoriteLesson)
 			return false;
 		if (id != other.id)
 			return false;
@@ -81,11 +92,11 @@ public class Student {
 		this.batchID = batchID;
 	}
 
-	public Lesson getFavoriteLesson() {
+	public int getFavoriteLesson() {
 		return favoriteLesson;
 	}
 
-	public void setFavoriteLesson(Lesson favoriteLesson) {
+	public void setFavoriteLesson(int favoriteLesson) {
 		this.favoriteLesson = favoriteLesson;
 	}
 	

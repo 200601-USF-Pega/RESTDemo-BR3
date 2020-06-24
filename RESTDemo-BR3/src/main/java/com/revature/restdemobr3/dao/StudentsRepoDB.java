@@ -13,20 +13,13 @@ import com.revature.restdemobr3.web.ConnectionService;
 
 public class StudentsRepoDB {
 	
-	ConnectionService connectionService;
-	
-	public StudentsRepoDB(ConnectionService connectionService) {
-		this.connectionService = connectionService;
-	}
-	
-	
 	public List<Student> getAllStudents() {
 		
 		List<Student> result = new ArrayList<Student>();
 		
 		try {
 			
-			Statement s = connectionService.getConnection().createStatement();
+			Statement s = ConnectionService.getConnection().createStatement();
 			s.executeQuery("SELECT * FROM student;");
 			
 			ResultSet rs = s.getResultSet();
@@ -37,8 +30,8 @@ public class StudentsRepoDB {
 				se.setId(rs.getInt("studentid"));
 				se.setName(rs.getString("name"));
 				se.setBatchID(rs.getString("currentbatchid"));
-//				se.setFavoriteLesson(new Lesson(rs.getString("favoritelesson")));
-				se.setFavoriteLesson(null);
+				se.setFavoriteLesson(rs.getInt("favoritelesson")));
+				//se.setFavoriteLesson(null);
 				if (!result.contains(se)) result.add(se);
 			}
 			
@@ -52,12 +45,41 @@ public class StudentsRepoDB {
 		}
 	}
 	
+	public Student getStudentByName(String name) {
+		
+		Student result = new Student();
+		
+		try {
+			
+			Statement s = ConnectionService.getConnection().createStatement();
+			s.executeQuery("SELECT * FROM student WHERE id = '" + name + "';");
+			
+			ResultSet rs = s.getResultSet();
+			
+			if (rs.next()) {
+				
+				result.setId(rs.getInt("studentid"));
+				result.setName(rs.getString("name"));
+				result.setBatchID(rs.getString("currentbatchid"));
+				result.setFavoriteLesson(rs.getInt("favoritelesson"));
+			}
+			
+			return result;
+			
+		} catch (SQLException e) {
+			
+			System.out.println("Exception: " + e.getMessage());
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
 	
 	public void addNewStudent(Student student) {
 		
 		try {
 			
-			PreparedStatement newStudent = connectionService.getConnection()
+			PreparedStatement newStudent = ConnectionService.getConnection()
 					.prepareStatement("INSERT INTO student VALUES (?,?,?,?)");
 			
 			newStudent.setString(1,  student.getName());
