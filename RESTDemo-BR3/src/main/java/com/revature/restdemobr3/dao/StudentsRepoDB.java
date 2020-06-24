@@ -79,12 +79,13 @@ public class StudentsRepoDB {
 		try {
 			
 			PreparedStatement newStudent = ConnectionService.getConnection()
-					.prepareStatement("INSERT INTO student VALUES (?,?,?,?)");
+					.prepareStatement("INSERT INTO student (name, currentbatchid, favoritelesson) VALUES (?,?,?)");
 			
 			newStudent.setString(1,  student.getName());
-			newStudent.setInt(2,  student.getId());
-			newStudent.setInt(3,  student.getBatchID());
-			newStudent.setInt(4,  student.getFavoriteLesson());
+			newStudent.setInt(2,  student.getBatchID());
+			newStudent.setInt(3,  student.getFavoriteLesson());
+			
+			newStudent.execute();
 			
 		} catch (SQLException e) {
 			
