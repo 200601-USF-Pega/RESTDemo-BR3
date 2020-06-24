@@ -13,6 +13,7 @@ import javax.ws.rs.core.Response;
 
 import com.revature.restdemobr3.dao.LessonsRepoDB;
 import com.revature.restdemobr3.dao.StudentsRepoDB;
+import com.revature.restdemobr3.dao.TrainersRepoDB;
 import com.revature.restdemobr3.model.Lesson;
 import com.revature.restdemobr3.model.Student;
 import com.revature.restdemobr3.model.Trainer;
@@ -24,24 +25,23 @@ public class TrainingService {
 	LessonsRepoDB lessonRepo = new LessonsRepoDB();
 	StudentsRepoDB studentRepo = new StudentsRepoDB(new ConnectionService());
 	
-//	@POST
-//	@Consumes(MediaType.APPLICATION_JSON)
-//	public Response addLesson(Lesson lesson) {
-//		lessonRepo.addLessons();
-//		return Response.ok().build();
-//	}
+	@POST
+	@Path("/addlesson")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response addLesson(@FormParam("id") int id, @FormParam("topic") String topic, @FormParam("trainerID") int trainerID)) {
+		Lesson newLesson = new Lesson(id, topic, trainerID);
+		lessonRepo.addLessons(newLesson);
+		return Response.status(201).build();
+	}
 	
 	@POST
+	@Path("/addstudent")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response addStudent(@FormParam("name") String studentName, @FormParam("id") int id, @FormParam("batchID") int batchID,
-			@FormParam("topic") String topic, @FormParam("trainerName") String trainerName, @FormParam("trainerID") int trainerID,
-			@FormParam("favStudentName") String favStudentName, @FormParam("currBatchID") int currBatchID) {
-		Student favStudent = studentRepo.getStudent(favStudentName);
-		Trainer trainer = new Trainer(trainerName, trainerID, favStudent, currBatchID);
-		Lesson lesson = new Lesson(id, topic, trainer);
-		Student newStudent = new Student(studentName, id, batchID, lesson);
+	public Response addStudent(@FormParam("name") String studentName, @FormParam("id") int id, @FormParam("batchID") int batchID, 
+			@FormParam("lessonID") int lessonID) {
+		Student newStudent = new Student(studentName, id, batchID, lessonID);
 		studentRepo.addNewStudent(newStudent);
-		return Response.ok().build();
+		return Response.status(201).build();
 	}
 	
 	@GET
