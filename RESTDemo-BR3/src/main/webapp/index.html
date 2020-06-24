@@ -1,81 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="rest_activity.css">
-        <title>REST Activity - BR3</title>
-	</head>
-	<body>
-        <div class="container">
-        <h1>Welcome to the Revature Batch Coordinator</h1>
-            <table>
-                <tr>
-                    <td>
-                        <form action="/RESTDemo-BR3/rest/service/gettrainers" method="get">
-                            <button>Get Trainers</button>
-                        </form>
-                    </td>
-                    <td>
-                        <form action="/RESTDemo-BR3/rest/service/getlessons" method="get">
-                            <button>Get Lessons</button>
-                        </form>
-                    </td>
-                    <td>
-                        <form action="/RESTDemo-BR3/rest/service/getstudents" method="get">
-                            <button>Get Students</button>
-                        </form>
-                    </td>
-                    <td>
-                        <form action="/RESTDemo-BR3/rest/service/getlessonranks" method="get">
-                            <button>Get Most Popular Lessons</button>
-                        </form>
-                    </td>
-                    </tr>
-                    <tr>
-                    <td>
-                        <form action="/RESTDemo-BR3/rest/service/addstudent" method="post" class="form-horizontal">
-                            <button type="submit">Add Student</button>
-                           	<div>
-                           		<label>Name</label>
-                           		<div>
-                           			<input type="text" id="name" name="name"/>
-                           		</div>
-                           	</div>
-                           	<div>
-                           		<label>Batch ID</label>
-                           		<div>
-                           			<input type="text" id="batch" name="batch"/>
-                           		</div>
-                           	</div>
-                           	<div>
-                           		<label>Favorite Lesson</label>
-                           		<div>
-                           			<input type="text" id="lesson" name="lesson"/>
-                           		</div>
-                           	</div>
-                        </form>
-                    </td>
-                    <td>
-                        <form action="/RESTDemo-BR3/rest/service/addlesson" method="post" class="form-horizontal">
-                            <button type="submit">Add Student</button>
-                           	<div>
-                           		<label>Topic</label>
-                           		<div>
-                           			<input type="text" id="topic" name="topic"/>
-                           		</div>
-                           	</div>
-                           	<div>
-                           		<label>Trainer (by ID)</label>
-                           		<div>
-                           			<input type="text" id="trainerid" name="trainerid"/>
-                           		</div>
-                           	</div>
-                        </form>
-                    </td>
-                </tr>
-            
-            </table>
-        </div>
-	</body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+	function addStudent() {
+		let student = {};
+		student.name = document.querySelector("#name").value;
+		student.batchID = document.querySelector("#batch").value;
+		student.lessonID = document.querySelector("#lesson").value;
+
+		var req = new XMLHttpRequest();
+		req.onreadystatechange = function() {
+			if (this.readyState > 3) {
+				document.querySelector("#name").innerHTML = "";
+				document.querySelector("#batch").innerHTML = "";
+				document.querySelector("#lesson").innerHTML = "";
+			}
+		}
+
+		req.open("POST",
+				"http://localhost:8080/RESTDemo-BR3/rest/service/addstudent",
+				true);
+		req.setRequestHeader('Content-Type', 'application/json');
+		req.send(JSON.stringify(student));
+	}
+</script>
+<link rel="stylesheet" href="rest_activity.css">
+<title>REST Activity - BR3</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Welcome to the Revature Batch Coordinator</h1>
+		<table>
+			<tr>
+				<td>
+					<form action="/RESTDemo-BR3/rest/service/gettrainers" method="get">
+						<button>Get Trainers</button>
+					</form>
+				</td>
+				<td>
+					<form action="/RESTDemo-BR3/rest/service/getlessons" method="get">
+						<button>Get Lessons</button>
+					</form>
+				</td>
+				<td>
+					<form action="/RESTDemo-BR3/rest/service/getstudents" method="get">
+						<button>Get Students</button>
+					</form>
+				</td>
+				<td>
+					<form action="/RESTDemo-BR3/rest/service/getlessonranks"
+						method="get">
+						<button>Get Most Popular Lessons</button>
+					</form>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button type="submit" onClick="addStudent()">Add Student</button>
+					<div>
+						<label>Name</label>
+						<div>
+							<input type="text" id="name" name="name" />
+						</div>
+					</div>
+					<div>
+						<label>Batch ID</label>
+						<div>
+							<input type="text" id="batch" name="batch" />
+						</div>
+					</div>
+					<div>
+						<label>Favorite Lesson</label>
+						<div>
+							<input type="text" id="lesson" name="lesson" />
+						</div>
+					</div>
+				</td>
+				<td>
+					<form action="/RESTDemo-BR3/rest/service/addlesson" method="post"
+						class="form-horizontal">
+						<button type="submit">Add Student</button>
+						<div>
+							<label>Topic</label>
+							<div>
+								<input type="text" id="topic" name="topic" />
+							</div>
+						</div>
+						<div>
+							<label>Trainer (by ID)</label>
+							<div>
+								<input type="text" id="trainerid" name="trainerid" />
+							</div>
+						</div>
+					</form>
+				</td>
+			</tr>
+
+		</table>
+	</div>
+</body>
 </html>
