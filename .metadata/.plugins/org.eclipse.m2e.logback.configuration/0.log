@@ -88,3 +88,7 @@
 2020-06-24 15:10:37,558 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jorla\Desktop\Revature Training\rest activity\RESTDemo-BR3\src\main\resources
 2020-06-24 15:10:37,604 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-06-24 15:10:37,621 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jorla\Desktop\Revature Training\rest activity\RESTDemo-BR3\src\test\resources
+2020-06-24 15:13:47,122 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 15:13:47,123 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jorla\Desktop\Revature Training\rest activity\RESTDemo-BR3\src\main\resources
+2020-06-24 15:13:47,140 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 15:13:47,141 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jorla\Desktop\Revature Training\rest activity\RESTDemo-BR3\src\test\resources
