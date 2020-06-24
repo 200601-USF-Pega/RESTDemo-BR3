@@ -25,6 +25,43 @@
 		req.setRequestHeader('Content-Type', 'application/json');
 		req.send(JSON.stringify(student));
 	}
+
+	var students = [];
+	function getAllStudents() {
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status > 199) {
+				document.querySelectorAll("#studentsTable tbody tr").forEach(
+						function(e) {
+							e.remove()
+						});
+
+				students = JSON.parse(this.responseText);
+				let table = document.querySelector("#studentsTable tbody");
+
+				for (let i = 0; i < students.length; ++i) {
+					let row = table.insertRow(table.rows.length);
+
+					let nameCell = row.insertCell(0);
+					nameCell.innerHTML = students[i].name;
+
+					let idCell = row.insertCell(1);
+					idCell.innerHTML = students[i].id;
+
+					let batchCell = row.insertCell(2);
+					batchCell.innerHTML = students[i].batch;
+
+					let lessonCell = row.insertCell(3);
+					lessonCell.innerHTML = students[i].lesson;
+
+				}
+			}
+		};
+		xhttp.open("GET",
+				"http://localhost:8080/RESTDemo-BR3/rest/service/getstudents",
+				true);
+		xhttp.send();
+	}
 </script>
 <link rel="stylesheet" href="rest_activity.css">
 <title>REST Activity - BR3</title>
@@ -35,9 +72,7 @@
 		<table>
 			<tr>
 				<td>
-					<form action="/RESTDemo-BR3/rest/service/getstudents" method="get">
-						<button>Get Students</button>
-					</form>
+					<button type="submit" onClick="getAllStudents()">Get Students</button>
 				</td>
 				<td>
 					<button type="submit" onClick="addStudent()">Add Student</button>
@@ -62,7 +97,17 @@
 				</td>
 			</tr>
 		</table>
-		</div>
-		
+	</div>
+	<table id="studentsTable">
+		<thead>
+			<tr>
+				<td>name</td>
+				<td>id</td>
+				<td>batch</td>
+				<td>lesson</td>
+			</tr>
+		</thead>
+		<tbody>
 
-		
+		</tbody>
+	</table>
