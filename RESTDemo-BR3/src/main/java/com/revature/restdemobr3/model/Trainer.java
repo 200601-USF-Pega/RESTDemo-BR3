@@ -3,24 +3,24 @@ package com.revature.restdemobr3.model;
 public class Trainer {
 	private String name;
 	private int id;
-	private Student favoriteStudent;
+	private int favoriteStudentID;
 	private int currentBatchID;
 	
 	public Trainer() {}
-	public Trainer(String name, int id, Student favoriteStudent, int currentBatchID) {
+	public Trainer(String name, int id, int favoriteStudent, int currentBatchID) {
 		super();
 		this.name = name;
 		this.id = id;
-		this.favoriteStudent = favoriteStudent;
+		this.favoriteStudentID = favoriteStudent;
 		this.currentBatchID = currentBatchID;
 	}
-
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + currentBatchID;
-		result = prime * result + ((favoriteStudent == null) ? 0 : favoriteStudent.hashCode());
+		result = prime * result + favoriteStudentID;
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
@@ -36,10 +36,7 @@ public class Trainer {
 		Trainer other = (Trainer) obj;
 		if (currentBatchID != other.currentBatchID)
 			return false;
-		if (favoriteStudent == null) {
-			if (other.favoriteStudent != null)
-				return false;
-		} else if (!favoriteStudent.equals(other.favoriteStudent))
+		if (favoriteStudentID != other.favoriteStudentID)
 			return false;
 		if (id != other.id)
 			return false;
@@ -66,12 +63,12 @@ public class Trainer {
 		this.id = id;
 	}
 
-	public Student getFavoriteStudent() {
-		return favoriteStudent;
+	public int getFavoriteStudent() {
+		return favoriteStudentID;
 	}
 
-	public void setFavoriteStudent(Student favoriteStudent) {
-		this.favoriteStudent = favoriteStudent;
+	public void setFavoriteStudent(int favoriteStudent) {
+		this.favoriteStudentID = favoriteStudent;
 	}
 
 	public int getCurrentBatchID() {

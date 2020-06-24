@@ -44,12 +44,12 @@ public class TrainingService {
 		return Response.ok().build();
 	}
 	
-//	@GET
-//	@Path("/gettrainers")
-//	@Produces(MediaType.APPLICATION_JSON)
-//	public Response getAllTrainers() {
-//		return Response.ok((ArrayList<Trainer>)trainerRepo.getAllTrainers()).build();
-//	}
+	@GET
+	@Path("/gettrainers")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getAllTrainers() {
+		return Response.ok((ArrayList<Trainer>)trainerRepo.getAllTrainers()).build();
+	}
 	
 	@GET
 	@Path("/getlessons")
