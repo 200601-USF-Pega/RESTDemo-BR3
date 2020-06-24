@@ -65,11 +65,11 @@ public class TrainingService {
 		return Response.ok((ArrayList<Student>)studentRepo.getAllStudents()).build();
 	}
 	
-//	@GET
-//	@Path("/getlessonranks")
-//	@Produces(MediaType.APPLICATION_JSON)
-//	public Response getLessonRanking() {
-//		return Response.ok((ArrayList<Lesson>)lessonRepo.getBestLessons()).build();
-//	}
+	@GET
+	@Path("/getlessonranks")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getLessonRanking() {
+		return Response.ok((ArrayList<Lesson>)lessonRepo.getFavLessons()).build();
+	}
 	
 }
