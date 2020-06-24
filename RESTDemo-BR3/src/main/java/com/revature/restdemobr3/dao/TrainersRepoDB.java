@@ -30,7 +30,7 @@ public class TrainersRepoDB {
 				while (rs.next()) {
 					Trainer h = new Trainer();
 					h.setName(rs.getString("name"));
-					h.setId(rs.getInt("UID"));
+					h.setId(rs.getInt("trainerid"));
 					h.setFavoriteStudent(rs.getInt("favoritestudent"));
 					h.setCurrentBatchID(rs.getInt("currentbatchid"));
 					if (!result.contains(h)) {
