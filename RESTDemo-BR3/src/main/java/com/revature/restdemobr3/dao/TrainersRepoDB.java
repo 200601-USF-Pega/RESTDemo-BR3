@@ -1,15 +1,10 @@
 package com.revature.restdemobr3.dao;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
 
 import com.revature.restdemobr3.model.Student;
 import com.revature.restdemobr3.model.Trainer;

@@ -3,7 +3,6 @@ package com.revature.restdemobr3.web;
 import java.util.ArrayList;
 
 import javax.ws.rs.Consumes;
-import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -23,24 +22,21 @@ public class TrainingService {
 
 	TrainersRepoDB trainerRepo = new TrainersRepoDB();
 	LessonsRepoDB lessonRepo = new LessonsRepoDB();
-	StudentsRepoDB studentRepo = new StudentsRepoDB(new ConnectionService());
+	StudentsRepoDB studentRepo = new StudentsRepoDB();
 	
 	@POST
 	@Path("/addlesson")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response addLesson(@FormParam("id") int id, @FormParam("topic") String topic, @FormParam("trainerID") int trainerID) {
-		Lesson newLesson = new Lesson(id, topic, trainerID);
-		lessonRepo.addLessons(newLesson);
+	public Response addLesson(Lesson lesson) {
+		lessonRepo.addLessons(lesson);
 		return Response.status(201).build();
 	}
 	
 	@POST
 	@Path("/addstudent")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response addStudent(@FormParam("name") String studentName, @FormParam("id") int id, @FormParam("batchID") int batchID, 
-			@FormParam("lessonID") int lessonID) {
-		Student newStudent = new Student(studentName, id, batchID, lessonID);
-		studentRepo.addNewStudent(newStudent);
+	public Response addStudent(Student student) {
+		studentRepo.addNewStudent(student);
 		return Response.status(201).build();
 	}
 	

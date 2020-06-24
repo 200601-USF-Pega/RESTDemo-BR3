@@ -106,7 +106,7 @@ public class LessonsRepoDB {
 		try {
 			PreparedStatement s = ConnectionService.getConnection().prepareStatement("INSERT INTO public.lessons (topic, trainer) VALUES (?, ?);");
 			s.setString(1, lesson.getTopic());
-			s.setInt(2, lesson.getTrainer().getId()); 
+			s.setInt(2, lesson.getTrainer()); 
 			s.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("Exception: " + e.getMessage());

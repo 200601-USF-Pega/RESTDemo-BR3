@@ -7,7 +7,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.revature.restdemobr3.model.Lesson;
 import com.revature.restdemobr3.model.Student;
 import com.revature.restdemobr3.web.ConnectionService;
 
@@ -29,8 +28,8 @@ public class StudentsRepoDB {
 				Student se = new Student();
 				se.setId(rs.getInt("studentid"));
 				se.setName(rs.getString("name"));
-				se.setBatchID(rs.getString("currentbatchid"));
-				se.setFavoriteLesson(rs.getInt("favoritelesson")));
+				se.setBatchID(rs.getInt("currentbatchid"));
+				se.setFavoriteLesson(rs.getInt("favoritelesson"));
 				//se.setFavoriteLesson(null);
 				if (!result.contains(se)) result.add(se);
 			}
@@ -60,7 +59,7 @@ public class StudentsRepoDB {
 				
 				result.setId(rs.getInt("studentid"));
 				result.setName(rs.getString("name"));
-				result.setBatchID(rs.getString("currentbatchid"));
+				result.setBatchID(rs.getInt("currentbatchid"));
 				result.setFavoriteLesson(rs.getInt("favoritelesson"));
 			}
 			
@@ -84,8 +83,8 @@ public class StudentsRepoDB {
 			
 			newStudent.setString(1,  student.getName());
 			newStudent.setInt(2,  student.getId());
-			newStudent.setString(3,  student.getBatchID());
-			newStudent.setString(4,  student.getFavoriteLesson().getTopic());
+			newStudent.setInt(3,  student.getBatchID());
+			newStudent.setInt(4,  student.getFavoriteLesson());
 			
 		} catch (SQLException e) {
 			
