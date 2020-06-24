@@ -4,6 +4,7 @@ public class Lesson {
 	private int id;
 	private String topic;
 	private int trainerID;
+	private int lessonCount;
 	
 	public Lesson() {}
 	public Lesson(int id, String topic, int trainer) {
@@ -59,6 +60,12 @@ public class Lesson {
 	}
 	public void setTrainer(int trainer) {
 		this.trainerID = trainer;
+	}
+	public int getLessonCount() {
+		return lessonCount;
+	}
+	public void setLessonCount(int count) {
+		this.lessonCount = count;
 	}
 		
 }
