@@ -62,6 +62,41 @@
 				true);
 		xhttp.send();
 	}
+	function getAllTrainers() {
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status > 199) {
+				document.querySelectorAll("#trainersTable tbody tr").forEach(
+						function(e) {
+							e.remove()
+						});
+
+				trainers = JSON.parse(this.responseText);
+				let table = document.querySelector("#trainersTable tbody");
+
+				for (let i = 0; i < trainers.length; ++i) {
+					let row = table.insertRow(table.rows.length);
+
+					let nameCell = row.insertCell(0);
+					nameCell.innerHTML = trainers[i].name;
+
+					let aliveCell = row.insertCell(1);
+					aliveCell.innerHTML = trainers[i].id;
+
+					let trainerCell = row.insertCell(2);
+					trainerCell.innerHTML = trainers[i].favoritestudent;
+					
+					let batchCell = row.insertCell(3);
+					batchCell.innerHTML = trainers[i].currentbatch;
+
+				}
+			}
+		};
+		xhttp.open("GET",
+				"http://localhost:8080/RESTDemo-BR3/rest/service/gettrainers",
+				true);
+		xhttp.send();
+	}
 </script>
 <link rel="stylesheet" href="rest_activity.css">
 <title>REST Activity - BR3</title>
@@ -95,19 +130,39 @@
 						</div>
 					</div>
 				</td>
+				<td>
+					<button type="submit" onClick="getAllTrainers()">Get Trainers</button>
+				</td>
 			</tr>
 		</table>
 	</div>
-	<table id="studentsTable">
-		<thead>
-			<tr>
-				<td>name</td>
-				<td>id</td>
-				<td>batch</td>
-				<td>lesson</td>
-			</tr>
-		</thead>
-		<tbody>
-
-		</tbody>
-	</table>
+	<div>
+		<table id="studentsTable">
+			<thead>
+				<tr>
+					<td>name</td>
+					<td>id</td>
+					<td>batch</td>
+					<td>lesson</td>
+				</tr>
+			</thead>
+			<tbody>
+	
+			</tbody>
+		</table>
+	</div>
+	<div class="right">
+		<table id="trainersTable">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>ID</th>
+					<th>Favorite Student ID</th>
+					<th>Current Batch ID</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+	</div>

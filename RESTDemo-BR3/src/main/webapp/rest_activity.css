@@ -23,3 +23,6 @@ table {
 a {
 	text-decoration: none;
 }
+.right{
+	align-content: right;
+}
