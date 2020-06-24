@@ -25,7 +25,7 @@
 		req.setRequestHeader('Content-Type', 'application/json');
 		req.send(JSON.stringify(student));
 	}
-	
+
 	function addLesson() {
 		let lesson = {};
 		lesson.topic = document.querySelector("#topic").value;
@@ -45,6 +45,39 @@
 		req.setRequestHeader('Content-Type', 'application/json');
 		req.send(JSON.stringify(lesson));
 	}
+
+	function getAllLessons() {
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status > 199) {
+				document.querySelectorAll("#lessonsTable tbody tr").forEach(
+						function(e) {
+							e.remove()
+						});
+
+				lessons = JSON.parse(this.responseText);
+				let table = document.querySelector("#lessonsTable");
+
+				for (let i = 0; i < lessons.length; ++i) {
+					let row = table.insertRow(table.rows.length);
+
+					let nameCell = row.insertCell(0);
+					nameCell.innerHTML = lessons[i].id;
+
+					let aliveCell = row.insertCell(1);
+					aliveCell.innerHTML = lessons[i].topic;
+
+					let aliveCell = row.insertCell(2);
+					aliveCell.innerHTML = lessons[i].trainerid;
+
+				}
+			}
+		};
+		xhttp.open("GET",
+				"http://localhost:8080/RESTDemo-BR3/rest/service/getlessons",
+				true);
+		xhttp.send();
+	}
 </script>
 <link rel="stylesheet" href="rest_activity.css">
 <title>REST Activity - BR3</title>
@@ -60,9 +93,9 @@
 					</form>
 				</td>
 				<td>
-					<form action="/RESTDemo-BR3/rest/service/getlessons" method="get">
-						<button>Get Lessons</button>
-					</form>
+					
+						<button type="submit" onClick = "getAllLessons()">Get Lessons</button>
+				
 				</td>
 				<td>
 					<form action="/RESTDemo-BR3/rest/service/getstudents" method="get">
@@ -116,6 +149,18 @@
 			</tr>
 
 		</table>
+
 	</div>
+	<table id="lessonsTable">
+		<thead>
+			<tr>
+				<td>id</td>
+				<td>topic</td>
+				<td>trainerid</td>
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+
 </body>
 </html>
