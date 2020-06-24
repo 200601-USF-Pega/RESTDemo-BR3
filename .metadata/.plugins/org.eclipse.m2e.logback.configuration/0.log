@@ -1,0 +1,65 @@
+2020-06-24 14:39:58,713 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-06-24 14:40:44,977 [Worker-5: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\reube\Revature\Pega-BPMv3\test\RESTDemo-BR3\pom.xml
+2020-06-24 14:40:45,585 [Worker-5: Creating maven-archetype-webapp] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.revature:RESTDemo-BR3:0.0.1-SNAPSHOT @ C:\Users\reube\Revature\Pega-BPMv3\test\RESTDemo-BR3\pom.xml.
+2020-06-24 14:40:46,256 [Worker-5: Creating maven-archetype-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RESTDemo-BR3/src/main/java
+2020-06-24 14:40:46,256 [Worker-5: Creating maven-archetype-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RESTDemo-BR3/src/test/java
+2020-06-24 14:40:47,903 [Worker-5: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 2 sec
+2020-06-24 14:40:48,551 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:40:48,551 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\reube\Revature\Pega-BPMv3\test\RESTDemo-BR3\src\main\resources
+2020-06-24 14:40:48,554 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:40:48,554 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\reube\Revature\Pega-BPMv3\test\RESTDemo-BR3\src\test\resources
+2020-06-24 14:41:40,468 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:41:40,468 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\reube\Revature\Pega-BPMv3\test\RESTDemo-BR3\src\main\resources
+2020-06-24 14:41:40,469 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:41:40,469 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\reube\Revature\Pega-BPMv3\test\RESTDemo-BR3\src\test\resources
+2020-06-24 14:44:05,759 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-06-24 14:44:08,289 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:44:08,290 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\reube\Revature\Pega-BPMv3\RESTDemo\RESTDemo-BR3\src\main\resources
+2020-06-24 14:44:08,292 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:44:08,293 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\reube\Revature\Pega-BPMv3\RESTDemo\RESTDemo-BR3\src\test\resources
+2020-06-24 14:44:36,479 [Worker-10: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2020-06-24 14:44:36,849 [Worker-10: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.revature:RESTDemo-BR3:0.0.1-SNAPSHOT @ C:\Users\reube\Revature\Pega-BPMv3\RESTDemo\RESTDemo-BR3\pom.xml.
+2020-06-24 14:44:36,988 [Worker-10: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RESTDemo-BR3/src/main/java
+2020-06-24 14:44:36,993 [Worker-10: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RESTDemo-BR3/src/test/java
+2020-06-24 14:44:37,602 [Worker-10: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for RESTDemo-BR3
+2020-06-24 14:44:37,612 [Worker-10: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2020-06-24 14:44:37,777 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:44:37,777 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\reube\Revature\Pega-BPMv3\RESTDemo\RESTDemo-BR3\src\main\resources
+2020-06-24 14:44:37,778 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:44:37,778 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\reube\Revature\Pega-BPMv3\RESTDemo\RESTDemo-BR3\src\test\resources
+2020-06-24 14:44:37,778 [Worker-4: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of RESTDemo-BR3
+2020-06-24 14:44:37,779 [Worker-4: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for RESTDemo-BR3
+2020-06-24 14:44:37,785 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:48:06,798 [Worker-10: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.revature:RESTDemo-BR3:0.0.1-SNAPSHOT @ C:\Users\reube\Revature\Pega-BPMv3\RESTDemo\RESTDemo-BR3\pom.xml.
+2020-06-24 14:48:07,542 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:48:07,542 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\reube\Revature\Pega-BPMv3\RESTDemo\RESTDemo-BR3\src\main\resources
+2020-06-24 14:48:07,544 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:48:07,544 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\reube\Revature\Pega-BPMv3\RESTDemo\RESTDemo-BR3\src\test\resources
+2020-06-24 14:48:07,544 [Worker-10: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of RESTDemo-BR3
+2020-06-24 14:48:07,544 [Worker-10: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for RESTDemo-BR3
+2020-06-24 14:48:07,547 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:48:08,844 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:48:08,845 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\reube\Revature\Pega-BPMv3\RESTDemo\RESTDemo-BR3\src\main\resources
+2020-06-24 14:48:08,846 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:48:08,846 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\reube\Revature\Pega-BPMv3\RESTDemo\RESTDemo-BR3\src\test\resources
+2020-06-24 14:49:18,396 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:49:18,396 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\reube\Revature\Pega-BPMv3\RESTDemo\RESTDemo-BR3\src\main\resources
+2020-06-24 14:49:18,397 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:49:18,398 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\reube\Revature\Pega-BPMv3\RESTDemo\RESTDemo-BR3\src\test\resources
+2020-06-24 14:49:36,357 [Worker-21: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2020-06-24 14:49:36,603 [Worker-21: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.revature:RESTDemo-BR3:0.0.1-SNAPSHOT @ C:\Users\reube\Revature\Pega-BPMv3\RESTDemo\RESTDemo-BR3\pom.xml.
+2020-06-24 14:49:37,150 [Worker-21: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RESTDemo-BR3/src/main/java
+2020-06-24 14:49:37,151 [Worker-21: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RESTDemo-BR3/src/test/java
+2020-06-24 14:49:37,831 [Worker-21: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for RESTDemo-BR3
+2020-06-24 14:49:37,835 [Worker-21: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2020-06-24 14:49:38,078 [Worker-22: Building Project RESTDemo-BR3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:49:38,079 [Worker-22: Building Project RESTDemo-BR3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\reube\Revature\Pega-BPMv3\RESTDemo\RESTDemo-BR3\src\main\resources
+2020-06-24 14:49:38,081 [Worker-22: Building Project RESTDemo-BR3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:49:38,081 [Worker-22: Building Project RESTDemo-BR3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\reube\Revature\Pega-BPMv3\RESTDemo\RESTDemo-BR3\src\test\resources
+2020-06-24 14:49:38,082 [Worker-22: Building Project RESTDemo-BR3] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of RESTDemo-BR3
+2020-06-24 14:49:38,082 [Worker-22: Building Project RESTDemo-BR3] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for RESTDemo-BR3
+2020-06-24 14:49:38,086 [Worker-22: Building Project RESTDemo-BR3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:49:38,274 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:49:38,274 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\reube\Revature\Pega-BPMv3\RESTDemo\RESTDemo-BR3\src\main\resources
+2020-06-24 14:49:38,275 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-06-24 14:49:38,275 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\reube\Revature\Pega-BPMv3\RESTDemo\RESTDemo-BR3\src\test\resources
