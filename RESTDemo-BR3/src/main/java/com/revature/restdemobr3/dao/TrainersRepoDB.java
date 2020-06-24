@@ -13,11 +13,10 @@ import java.util.Scanner;
 
 import com.revature.restdemobr3.model.Student;
 import com.revature.restdemobr3.model.Trainer;
+import com.revature.restdemobr3.web.ConnectionService;
 
-public class TrainerRepoDB {
+public class TrainersRepoDB {
 
-
-	@Override
 	public List<Trainer> getAllTrainers() {
 		
 		List<Trainer> result = new ArrayList<Trainer>();
@@ -48,7 +47,7 @@ public class TrainerRepoDB {
 		return null;
 	}
 
-	@Override
+
 	public List<Student> getFavoriteStudent() {
 		// TODO Auto-generated method stub
 		return null;
