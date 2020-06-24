@@ -1,0 +1,14 @@
+* {
+    background-color: lightcyan;
+}
+button {
+    background-color: lightgoldenrodyellow;
+    font-size: 40px;
+    padding: 5px;
+}
+table {
+    vertical-align: middle;
+}
+.container {
+    width: 100%;
+}
