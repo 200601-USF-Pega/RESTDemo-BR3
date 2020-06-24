@@ -28,7 +28,7 @@ public class TrainingService {
 	@POST
 	@Path("/addlesson")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response addLesson(@FormParam("id") int id, @FormParam("topic") String topic, @FormParam("trainerID") int trainerID)) {
+	public Response addLesson(@FormParam("id") int id, @FormParam("topic") String topic, @FormParam("trainerID") int trainerID) {
 		Lesson newLesson = new Lesson(id, topic, trainerID);
 		lessonRepo.addLessons(newLesson);
 		return Response.status(201).build();
