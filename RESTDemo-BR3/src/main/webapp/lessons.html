@@ -1,67 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
 
-	function addLesson() {
-		let lesson = {};
-		lesson.topic = document.querySelector("#topic").value;
-		lesson.trainer = document.querySelector("#trainerid").value;
+		function addLesson() {
+			let lesson = {};
+			lesson.topic = document.querySelector("#topic").value;
+			lesson.trainer = document.querySelector("#trainerid").value;
 
-		var req = new XMLHttpRequest();
-		req.onreadystatechange = function() {
-			if (this.readyState > 3) {
-				document.querySelector("#topic").value = "";
-				document.querySelector("#trainerid").value = "";
+			var req = new XMLHttpRequest();
+			req.onreadystatechange = function () {
+				if (this.readyState > 3) {
+					document.querySelector("#topic").value = "";
+					document.querySelector("#trainerid").value = "";
+				}
 			}
-		}
 
-		req.open("POST",
+			req.open("POST",
 				"http://localhost:8080/RESTDemo-BR3/rest/service/addlesson",
 				true);
-		req.setRequestHeader('Content-Type', 'application/json');
-		req.send(JSON.stringify(lesson));
-	}
-	
-	var lessons = [];
-	function getAllLessons() {
-		var xhttp = new XMLHttpRequest();
-		xhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status > 199) {
-				document.querySelectorAll("#lessonsTable tbody tr").forEach(
-						function(e) {
+			req.setRequestHeader('Content-Type', 'application/json');
+			req.send(JSON.stringify(lesson));
+		}
+
+		var lessons = [];
+		function getAllLessons() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status > 199) {
+					document.querySelectorAll("#lessonsTable tbody tr").forEach(
+						function (e) {
 							e.remove()
 						});
 
-				lessons = JSON.parse(this.responseText);
-				let table = document.querySelector("#lessonsTable tbody");
+					lessons = JSON.parse(this.responseText);
+					let table = document.querySelector("#lessonsTable tbody");
 
-				for (let i = 0; i < lessons.length; ++i) {
-					let row = table.insertRow(table.rows.length);
+					for (let i = 0; i < lessons.length; ++i) {
+						let row = table.insertRow(table.rows.length);
 
-					let nameCell = row.insertCell(0);
-					nameCell.innerHTML = lessons[i].id;
+						let nameCell = row.insertCell(0);
+						nameCell.innerHTML = lessons[i].id;
 
-					let aliveCell = row.insertCell(1);
-					aliveCell.innerHTML = lessons[i].topic;
+						let aliveCell = row.insertCell(1);
+						aliveCell.innerHTML = lessons[i].topic;
 
-					let trainerCell = row.insertCell(2);
-					trainerCell.innerHTML = lessons[i].trainer;
+						let trainerCell = row.insertCell(2);
+						trainerCell.innerHTML = lessons[i].trainer;
 
+					}
 				}
-			}
-		};
-		xhttp.open("GET",
+			};
+			xhttp.open("GET",
 				"http://localhost:8080/RESTDemo-BR3/rest/service/getlessons",
 				true);
-		xhttp.send();
-	}
-</script>
-<link rel="stylesheet" href="rest_activity.css">
-<title>Lessons Page - BR3</title>
+			xhttp.send();
+		}
+
+		var lessons = [];
+		function getRankLessons() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status > 199) {
+					document.querySelectorAll("#lessonsRankTable tbody tr").forEach(
+						function (e) {
+							e.remove()
+						});
+
+					lessons = JSON.parse(this.responseText);
+					let table = document.querySelector("#lessonsRankTable tbody");
+
+					for (let i = 0; i < lessons.length; ++i) {
+						let row = table.insertRow(table.rows.length);
+
+						let nameCell = row.insertCell(0);
+						nameCell.innerHTML = lessons[i].topic;
+
+						let aliveCell = row.insertCell(1);
+						aliveCell.innerHTML = lessons[i].num;
+
+
+					}
+				}
+			};
+			xhttp.open("GET",
+				"http://localhost:8080/RESTDemo-BR3/rest/service/getlessonranks",
+				true);
+			xhttp.send();
+		}
+	</script>
+	<link rel="stylesheet" href="rest_activity.css">
+	<title>Lessons Page - BR3</title>
 </head>
+
 <body>
 	<div class="container">
 		<h1>RBC Lessons</h1>
@@ -71,10 +105,7 @@
 					<button type="submit" onClick="getAllLessons()">Get Lessons</button>
 				</td>
 				<td>
-					<form action="/RESTDemo-BR3/rest/service/getlessonranks"
-						method="get">
-						<button>Get Most Popular Lessons</button>
-					</form>
+					<button type="submit" onClick="getRankLessons()">Get Most Popular Lessons</button>
 				</td>
 			</tr>
 			<tr>
@@ -107,9 +138,20 @@
 			</tr>
 		</thead>
 		<tbody>
-			
+
 		</tbody>
 	</table>
+	<table id="lessonsRankTable">
+		<thead>
+			<tr>
+				<td>Topic</td>
+				<td>Favorite Count</td>
+			</tr>
+		</thead>
+		<tbody>
 
+		</tbody>
+	</table>
 </body>
+
 </html>
