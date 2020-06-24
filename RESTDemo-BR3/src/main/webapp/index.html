@@ -25,6 +25,26 @@
 		req.setRequestHeader('Content-Type', 'application/json');
 		req.send(JSON.stringify(student));
 	}
+	
+	function addLesson() {
+		let lesson = {};
+		lesson.topic = document.querySelector("#topic").value;
+		lesson.trainer = document.querySelector("#trainerid").value;
+
+		var req = new XMLHttpRequest();
+		req.onreadystatechange = function() {
+			if (this.readyState > 3) {
+				document.querySelector("#topic").value = "";
+				document.querySelector("#trainerid").value = "";
+			}
+		}
+
+		req.open("POST",
+				"http://localhost:8080/RESTDemo-BR3/rest/service/addlesson",
+				true);
+		req.setRequestHeader('Content-Type', 'application/json');
+		req.send(JSON.stringify(lesson));
+	}
 </script>
 <link rel="stylesheet" href="rest_activity.css">
 <title>REST Activity - BR3</title>
@@ -79,22 +99,19 @@
 					</div>
 				</td>
 				<td>
-					<form action="/RESTDemo-BR3/rest/service/addlesson" method="post"
-						class="form-horizontal">
-						<button type="submit">Add Lesson</button>
+					<button type="submit" onClick="addLesson()">Add Lesson</button>
+					<div>
+						<label>Topic</label>
 						<div>
-							<label>Topic</label>
-							<div>
-								<input type="text" id="topic" name="topic" />
-							</div>
+							<input type="text" id="topic" name="topic" />
 						</div>
+					</div>
+					<div>
+						<label>Trainer (by ID)</label>
 						<div>
-							<label>Trainer (by ID)</label>
-							<div>
-								<input type="text" id="trainerid" name="trainerid" />
-							</div>
+							<input type="text" id="trainerid" name="trainerid" />
 						</div>
-					</form>
+					</div>
 				</td>
 			</tr>
 
