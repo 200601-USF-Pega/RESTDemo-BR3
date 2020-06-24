@@ -3,7 +3,7 @@ package com.revature.restdemobr3.model;
 public class Student {
 	private String name;
 	private int id;
-	private String batchID;
+	private int batchID;
 	private Lesson favoriteLesson;
 	
 
@@ -11,7 +11,7 @@ public class Student {
 		super();
 	}
 
-	public Student(String name, int id, String batchID, Lesson favoriteLesson) {
+	public Student(String name, int id, int batchID, Lesson favoriteLesson) {
 
 		super();
 		this.name = name;
@@ -19,12 +19,12 @@ public class Student {
 		this.batchID = batchID;
 		this.favoriteLesson = favoriteLesson;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((batchID == null) ? 0 : batchID.hashCode());
+		result = prime * result + batchID;
 		result = prime * result + ((favoriteLesson == null) ? 0 : favoriteLesson.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
@@ -40,10 +40,7 @@ public class Student {
 		if (getClass() != obj.getClass())
 			return false;
 		Student other = (Student) obj;
-		if (batchID == null) {
-			if (other.batchID != null)
-				return false;
-		} else if (!batchID.equals(other.batchID))
+		if (batchID != other.batchID)
 			return false;
 		if (favoriteLesson == null) {
 			if (other.favoriteLesson != null)
@@ -59,8 +56,6 @@ public class Student {
 			return false;
 		return true;
 	}
-
-
 
 	public String getName() {
 		return name;
@@ -78,11 +73,11 @@ public class Student {
 		this.id = id;
 	}
 
-	public String getBatchID() {
+	public int getBatchID() {
 		return batchID;
 	}
 
-	public void setBatchID(String batchID) {
+	public void setBatchID(int batchID) {
 		this.batchID = batchID;
 	}
 

@@ -4,10 +4,10 @@ public class Trainer {
 	private String name;
 	private int id;
 	private Student favoriteStudent;
-	private String currentBatchID;
+	private int currentBatchID;
 	
 	public Trainer() {}
-	public Trainer(String name, int id, Student favoriteStudent, String currentBatchID) {
+	public Trainer(String name, int id, Student favoriteStudent, int currentBatchID) {
 		super();
 		this.name = name;
 		this.id = id;
@@ -15,19 +15,16 @@ public class Trainer {
 		this.currentBatchID = currentBatchID;
 	}
 
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((currentBatchID == null) ? 0 : currentBatchID.hashCode());
+		result = prime * result + currentBatchID;
 		result = prime * result + ((favoriteStudent == null) ? 0 : favoriteStudent.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
-
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -37,10 +34,7 @@ public class Trainer {
 		if (getClass() != obj.getClass())
 			return false;
 		Trainer other = (Trainer) obj;
-		if (currentBatchID == null) {
-			if (other.currentBatchID != null)
-				return false;
-		} else if (!currentBatchID.equals(other.currentBatchID))
+		if (currentBatchID != other.currentBatchID)
 			return false;
 		if (favoriteStudent == null) {
 			if (other.favoriteStudent != null)
@@ -56,8 +50,6 @@ public class Trainer {
 			return false;
 		return true;
 	}
-
-
 	public String getName() {
 		return name;
 	}
@@ -82,11 +74,11 @@ public class Trainer {
 		this.favoriteStudent = favoriteStudent;
 	}
 
-	public String getCurrentBatchID() {
+	public int getCurrentBatchID() {
 		return currentBatchID;
 	}
 
-	public void setCurrentBatchID(String currentBatchID) {
+	public void setCurrentBatchID(int currentBatchID) {
 		this.currentBatchID = currentBatchID;
 	}
 	
