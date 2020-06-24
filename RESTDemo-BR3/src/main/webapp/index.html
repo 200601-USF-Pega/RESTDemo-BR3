@@ -45,7 +45,8 @@
 		req.setRequestHeader('Content-Type', 'application/json');
 		req.send(JSON.stringify(lesson));
 	}
-
+	
+	var lessons = [];
 	function getAllLessons() {
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
@@ -56,7 +57,7 @@
 						});
 
 				lessons = JSON.parse(this.responseText);
-				let table = document.querySelector("#lessonsTable");
+				let table = document.querySelector("#lessonsTable tbody");
 
 				for (let i = 0; i < lessons.length; ++i) {
 					let row = table.insertRow(table.rows.length);
@@ -67,8 +68,8 @@
 					let aliveCell = row.insertCell(1);
 					aliveCell.innerHTML = lessons[i].topic;
 
-					let aliveCell = row.insertCell(2);
-					aliveCell.innerHTML = lessons[i].trainerid;
+					let trainerCell = row.insertCell(2);
+					trainerCell.innerHTML = lessons[i].trainer;
 
 				}
 			}
@@ -93,9 +94,7 @@
 					</form>
 				</td>
 				<td>
-					
-						<button type="submit" onClick = "getAllLessons()">Get Lessons</button>
-				
+					<input type="button" onClick="getAllLessons()" value="Get Lessons"/>
 				</td>
 				<td>
 					<form action="/RESTDemo-BR3/rest/service/getstudents" method="get">
@@ -159,7 +158,9 @@
 				<td>trainerid</td>
 			</tr>
 		</thead>
-		<tbody></tbody>
+		<tbody>
+			
+		</tbody>
 	</table>
 
 </body>

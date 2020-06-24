@@ -2168,3 +2168,6 @@ java.io.FileNotFoundException: C:\Users\jorla\Desktop\Revature Training\rest act
 !MESSAGE Save operation warnings.
 !SUBENTRY 1 org.eclipse.core.resources 2 234 2020-06-24 15:48:03.957
 !MESSAGE The project description file (.project) for 'Servers' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY org.eclipse.wst.server.core 4 0 2020-06-24 16:55:01.608
+!MESSAGE Server Tomcat v9.0 Server at localhost failed to start.
