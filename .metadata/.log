@@ -2171,3 +2171,15 @@ java.io.FileNotFoundException: C:\Users\jorla\Desktop\Revature Training\rest act
 
 !ENTRY org.eclipse.wst.server.core 4 0 2020-06-24 16:55:01.608
 !MESSAGE Server Tomcat v9.0 Server at localhost failed to start.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-24 17:10:15.381
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.QNLJDFli
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-24 17:10:15.384
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.QNLJDFli
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-24 17:10:15.387
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-24 17:10:15.390
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.QNLJDFli => OK
