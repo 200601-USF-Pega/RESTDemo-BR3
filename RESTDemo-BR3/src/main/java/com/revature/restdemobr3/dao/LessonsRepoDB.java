@@ -78,12 +78,11 @@ public class LessonsRepoDB {
 			
 			try {
 				Statement s = ConnectionService.getConnection().createStatement();
-				s.executeQuery("SELECT lessonsid, topic, count(topic) as num FROM lessons ORDER BY num desc;");
+				s.executeQuery("SELECT topic, count(lessonid) as num FROM lessons GROUP BY topic ORDER BY num desc;");
 				
 				ResultSet rs = s.getResultSet();
 				while (rs.next()) {
 					Lesson l = new Lesson();
-					l.setId(rs.getInt("lessonid"));
 					l.setTopic(rs.getString("topic"));
 					l.setLessonCount(rs.getInt("num"));
 					result.add(l);
