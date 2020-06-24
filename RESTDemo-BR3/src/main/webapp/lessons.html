@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+
+	function addLesson() {
+		let lesson = {};
+		lesson.topic = document.querySelector("#topic").value;
+		lesson.trainer = document.querySelector("#trainerid").value;
+
+		var req = new XMLHttpRequest();
+		req.onreadystatechange = function() {
+			if (this.readyState > 3) {
+				document.querySelector("#topic").value = "";
+				document.querySelector("#trainerid").value = "";
+			}
+		}
+
+		req.open("POST",
+				"http://localhost:8080/RESTDemo-BR3/rest/service/addlesson",
+				true);
+		req.setRequestHeader('Content-Type', 'application/json');
+		req.send(JSON.stringify(lesson));
+	}
+	
+	var lessons = [];
+	function getAllLessons() {
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status > 199) {
+				document.querySelectorAll("#lessonsTable tbody tr").forEach(
+						function(e) {
+							e.remove()
+						});
+
+				lessons = JSON.parse(this.responseText);
+				let table = document.querySelector("#lessonsTable tbody");
+
+				for (let i = 0; i < lessons.length; ++i) {
+					let row = table.insertRow(table.rows.length);
+
+					let nameCell = row.insertCell(0);
+					nameCell.innerHTML = lessons[i].id;
+
+					let aliveCell = row.insertCell(1);
+					aliveCell.innerHTML = lessons[i].topic;
+
+					let trainerCell = row.insertCell(2);
+					trainerCell.innerHTML = lessons[i].trainer;
+
+				}
+			}
+		};
+		xhttp.open("GET",
+				"http://localhost:8080/RESTDemo-BR3/rest/service/getlessons",
+				true);
+		xhttp.send();
+	}
+</script>
+<link rel="stylesheet" href="rest_activity.css">
+<title>Lessons Page - BR3</title>
+</head>
+<body>
+	<div class="container">
+		<h1>RBC Lessons</h1>
+		<table>
+			<tr>
+				<td>
+					<button type="submit" onClick="getAllLessons()">Get Lessons</button>
+				</td>
+				<td>
+					<form action="/RESTDemo-BR3/rest/service/getlessonranks"
+						method="get">
+						<button>Get Most Popular Lessons</button>
+					</form>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button type="submit" onClick="addLesson()">Add Lesson</button>
+					<div>
+						<label>Topic</label>
+						<div>
+							<input type="text" id="topic" name="topic" />
+						</div>
+					</div>
+					<div>
+						<label>Trainer (by ID)</label>
+						<div>
+							<input type="text" id="trainerid" name="trainerid" />
+						</div>
+					</div>
+				</td>
+			</tr>
+
+		</table>
+
+	</div>
+	<table id="lessonsTable">
+		<thead>
+			<tr>
+				<td>id</td>
+				<td>topic</td>
+				<td>trainerid</td>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+
+</body>
+</html>
